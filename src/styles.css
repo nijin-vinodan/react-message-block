@@ -1,0 +1,38 @@
+.react-messages * {
+    box-sizing: border-box;
+}
+
+.react-messages {
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #d4edf7;
+    border: 1px solid #CCC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.react-messages.info {
+    background-color: #d4edf7;
+}
+
+.react-messages.success {
+    background-color: #ddf0d7;
+    border-color: #bed5b4;
+}
+
+.react-messages.error {
+    background-color: #f6ddde;
+    border-color: #d4aaac;
+}
+
+.react-messages.warn {
+    background-color: #ffefc6;
+    border-color: #eed9a1;
+}
+
+.react-messages .text {
+    flex: 1
+}

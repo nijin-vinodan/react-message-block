@@ -1,0 +1,42 @@
+{
+  "name": "react-message-block",
+  "version": "0.0.2",
+  "description": "An easy to use, simple multi-purpose react loader. Ability to show full page loading and inner section loading",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "keywords": [
+    "react",
+    "loader",
+    "simple",
+    "react-messages",
+    "message-block",
+    "react-message-block",
+    "success-block"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nijin-vinodan/react-spinner-loader"
+  },
+  "author": "Nijin Vinodan",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "style-loader": "^1.2.1",
+    "css-loader": "^3.5.3",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
