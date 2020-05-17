@@ -1,9 +1,10 @@
 
+Doing a React POC or building a production application? <b>react-message-block</b> is an easy to use package for showing <i>success/error/warn/info/custom</i> message blocks.
 
 ## Features
 
 - Lightweight 
-- Out of the box messages
+- Out of the box message stylings
 - Custom Styling Options
 
 ## Installation
@@ -21,7 +22,7 @@ npm i --save react-message-block
 ```
 
 ## Documentation
-You could view the documentation in <a href = "https://github.com/nijin-vinodan/react-spinner-loader">Github Page</a> as well.
+You could view the documentation in <a href = "https://github.com/nijin-vinodan/react-message-block">Github Page</a> as well.
 
 ## Usage
 
@@ -39,10 +40,12 @@ const App = () => {
     )
 }
 ```
+<a href = "https://codesandbox.io/s/message-block-xj4g6" target = "_blank">View Example on Sandbox</a>
+
 
 ## Available Custom Props
 
-By default, react-spinner-loader comes up with the following properties. You could use the following to customize your loader out of the box.
+By default, react-message-block comes up with the following properties. You could use the following to customize your message block out of the box.
 
 <table>
   <tbody>
@@ -68,13 +71,6 @@ By default, react-spinner-loader comes up with the following properties. You cou
       <td>To show Loading Message</td>
     </tr>
     <tr>
-      <td>showIcon</td>
-      <td>Yes</td>
-      <td>false</td>
-      <td>true | false</td>
-      <td>To show icon along with the message text</td>
-    </tr>
-    <tr>
       <td>onClose</td>
       <td>Yes</td>
       <td></td>
@@ -92,71 +88,62 @@ By default, react-spinner-loader comes up with the following properties. You cou
       </td>
       <td>To apply user defined styles</td>
     </tr>
+    <tr>
+      <td>align</td>
+      <td>Yes</td>
+      <td>center</td>
+      <td>
+        center | left | right
+      </td>
+      <td>To align message text</td>
+    </tr>
   </tbody>
 </table>
-
+<br/>
 
 ## Example
 
-### Prop : <b>type</b>
+### <b>Custom HTML Layout</b>
 
-To show inline loaders, use <b><i>type = "inline"</i></b>. This is the default value.
-```
-<Loader show = {loader} type = "inline" />
-``` 
-<a href = "https://codesandbox.io/s/react-spinner-loader-inline-example-qeglg" target = "_blank">View on Sandbox</a>
-
-To show a full page loader with blur background, use <b><i>type = "body"</i></b>
-```
-<Loader show = {loader} type = "body" />
-```
-<a href = "https://codesandbox.io/s/react-spinner-loader-body-example-b9xce"  target = "_blank">View on Sandbox</a>
-
-To show a full page loader <u>without</u> blur background, then use <b><i>type = "box"</i></b>
+Not happy with the one line message? You could always pass children within the <b>Message</b> component to display your custom message layout.
 
 ```
-<Loader show = {loader}  type = "box" />
-```
-<a href = "https://codesandbox.io/s/react-spinner-loader-box-example-1k90o"  target = "_blank">View on Sandbox</a>
-
-### Prop : <b>message</b> and <b>messageStyle</b>
-
-Many times, we would want to provide a loading message along with the loader to help user understand why is it taking a lot of time to load the data. <br/>
-To achieve this, you could pass custom loading string with <b>message</b> prop. <br/>
-Alternatively, you could also configure the message styling with <b>messageStyling</b> prop.
-
-```
-<Loader 
-    show = {loader}
-    message = "Loading Message"
-    messageStyling = {{
-        color: blue
-    }}
-/>
+<Message type = 'info'>
+    <h4>Message Heading</h4>
+    <p>This is the message body</h4>
+</Message>
 ```
 
-### Prop : <b>stack</b>
-This prop would help to place message either horizontally or vertically with respect to the spinner.
 ```
-<Loader show = {loader}  stack = "vertical"/>
+<Message type = 'error'>
+    <h4>Please check the following fields</h4>
+    <ul>
+      <li>Email is not valid</li>
+      <li>Password and Confirm Password does not match</li>
+      <li>Phone Number is already registered</li>
+    </ul>
+</Message>
 ```
-<a href = "https://codesandbox.io/s/react-spinner-loader-vertical-example-ppi90"  target = "_blank">View on Sandbox</a>
+<a href = "https://codesandbox.io/s/message-block-custom-children-hjcok"  target = "_blank">View Example on Sandbox</a>
 
-### Prop : <b>spinnerStyle</b>
-Want to align the spinner with your website theme? You could always use <b>spinnerStyle</b> prop to customize the loader colors.<br/>
+### <b>onClose</b>
+Many times, you would want to provide the feasibility of dismissing a message block. You could achieve it by passing <b><u>onClose</u></b> callback function as prop to the component.
 
 ```
-<Loader
-    show = {loader} 
-    spinnerStyle = {{
-        primary: '#46B597',
-        secondary: '#2D866D'
-    }}
-/>
+<Message 
+  text = 'Something went wrong' 
+  type = 'error' 
+  onClose = {handleClose} 
+>
 ```
+<a href = "https://codesandbox.io/s/message-block-with-close-hhb8m"  target = "_blank">View Example on Sandbox</a>
 
-### Prop : <b>spinnerSize</b>
-Increase or Decrease the spinner size with <b>spinnerSize</b>
-```
-<Loader show = {loader} spinnerSize = "50px"/>
-```
+
+## What's Coming Up
+<ul>
+  <li>Icon for Messages</li>
+  <li>Auto Hiding Message after N seconds</li>
+</ul>
+
+## Author
+Nijin Vinodan

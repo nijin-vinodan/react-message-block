@@ -1,33 +1,32 @@
 import "./styles.css";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
+
 
 const Message = props => {
 
     const {
         text,
         type = 'info',
-        showIcon = true,
         onClose,
-        style
+        style,
+        align = 'center'
     } = props;
 
+    const reactMessageBlockStyle = `react-messages ${type}`;
 
-    const reactMessageBlockStyle = `react-messages ${type}`
+    const textStyle = `text ${align}`;
 
     return (
         <div className={reactMessageBlockStyle} style={style}>
-            {showIcon && <div className="icon">
-                I
-            </div>}
-            <div className="text">
-                {text}
+            <div className={textStyle}>
+                {props.children} {text}
             </div>
             {onClose && <div className="close" onClick={onClose}>
                 X
             </div>}
         </div>
-    );
+    )
 };
 
 Message.propTypes = {
